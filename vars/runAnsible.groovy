@@ -1,3 +1,3 @@
 def call() {
-    echo env;
+    println(env);
 }
