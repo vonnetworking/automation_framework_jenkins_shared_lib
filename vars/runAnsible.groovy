@@ -1,3 +1,3 @@
-def call() {
-    println(env);
+def call(this) {
+    println(this.env);
 }
