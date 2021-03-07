@@ -9,12 +9,6 @@ def call() {
     sh '''
         echo "hello World - ${GIT_URL}.${GIT_COMMIT}"
 
-        cat <<EOT >greetings.txt
-        [url "git@github.com:"]
-        insteadOf = https://github.com/
-        
-        EOT
-
         ansible-galaxy install --roles-path="${WORKSPACE}/roles" git+${GIT_URL} --force
         ansible-galaxy install --roles-path="${WORKSPACE}/roles" -r requirements.yml
 
