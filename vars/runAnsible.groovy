@@ -6,7 +6,7 @@ def call() {
     println(env);
 
     println("------########---------")
-    sh '''
+    sh ('''
         echo "hello World - ${GIT_URL}.${GIT_COMMIT}"
 
         ansible-galaxy install --roles-path="${WORKSPACE}/roles" git+${GIT_URL} --force
@@ -17,6 +17,6 @@ def call() {
 
         # ls roles/
         # env
-    '''
+    ''');
 
 }
